@@ -36,16 +36,3 @@ Route::group(['prefix' => 'products'], function () {
 
 
 
-
-{
-	
-	"name":"I-Phone x",
-	"description":"Best new phone with Face Id",
-	"stock":"10",
-	"price":"45",
-	"discount":"50"
-
-
-}
-
-
