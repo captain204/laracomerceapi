@@ -18,12 +18,34 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/register', 'Api\AuthController@register');
+Route::post('/login', 'Api\AuthController@login');
+
+
+
 Route::apiResource('/products','ProductController');
+
+
 
 
 Route::group(['prefix' => 'products'], function () {
     
     Route::apiResource('/{products}/reviews','ReviewController');
+   
 });
+
+
+
+
+{
+	
+	"name":"I-Phone x",
+	"description":"Best new phone with Face Id",
+	"stock":"10",
+	"price":"45",
+	"discount":"50"
+
+
+}
 
 
