@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Model\Review;
 use App\Model\Product;
 use Illuminate\Http\Request;

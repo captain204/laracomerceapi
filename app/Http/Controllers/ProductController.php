@@ -87,6 +87,8 @@ class ProductController extends Controller
         //
     }
 
+
+    
     /**
      * Update the specified resource in storage.
      *
@@ -94,7 +96,7 @@ class ProductController extends Controller
      * @param  \App\Model\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+     public function update(Request $request, Product $product)
     {
 
         $this->ProductUserCheck($product);
@@ -105,6 +107,7 @@ class ProductController extends Controller
             'data'=> new ProductResource($product)
         ],Response::HTTP_CREATED);
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -118,6 +121,8 @@ class ProductController extends Controller
         $product->delete();
         return response(null, Response::HTTP_NO_CONTENT);
     }
+
+
 
     public function ProductUserCheck($product)
     {

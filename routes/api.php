@@ -14,24 +14,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
 
-Route::post('/register', 'Api\AuthController@register');
-Route::post('/login', 'Api\AuthController@login');
-
-
-
-Route::apiResource('/products','ProductController');
+#Route::post('/register', 'Api\AuthController@register');
+#Route::post('/login', 'Api\AuthController@login');
 
 
 
 
-Route::group(['prefix' => 'products'], function () {
+
+
+
+
+/*Route::group(['prefix' => 'products'], function () {
     
     Route::apiResource('/{products}/reviews','ReviewController');
    
+});*/
+
+
+
+Route::middleware('auth:api')->prefix('v1')->group(function(){
+    Route::get('/user', function (Request $request) {
+    return $request->user();
+    });
+    // Products
+    Route::apiResource('/products','ProductController');    
+
+    //Reviews
+    Route::apiResource('/{products}/reviews','ReviewController');
 });
 
 
