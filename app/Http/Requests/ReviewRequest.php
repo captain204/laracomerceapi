@@ -24,7 +24,6 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            
             'customer'=>'required',
             'star'=>'required|integer|between:0,5',
             'review'=>'required'

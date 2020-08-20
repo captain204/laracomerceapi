@@ -53,13 +53,12 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->name = $request->name;
-        $product->detail = $request->description;
+        $product->detail = $request->detail;
         $product->stock = $request->stock;
         $product->price = $request->price;
         $product->discount= $request->discount;
+        $product->user_id= $request->user_id;
         $product->save();
-
-
         return $request->all([
             'data'=> new ProductResource($product)
             ],Response::HTTP_CREATED);

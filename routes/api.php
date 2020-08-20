@@ -37,14 +37,18 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth:api')->prefix('v1')->group(function(){
+    
+    //Users
     Route::get('/user', function (Request $request) {
     return $request->user();
     });
+    
     // Products
-    Route::apiResource('/products','ProductController');    
+    Route::apiResource('/products', 'ProductController');    
 
     //Reviews
     Route::apiResource('/{products}/reviews','ReviewController');
+
 });
 
 
